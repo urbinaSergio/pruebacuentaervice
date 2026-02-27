@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "7402bf87-2a26-463c-b791-c1c95ceb3320",
+    "name": "cuenta-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10043564"
+  },
+  "item": [
+    {
+      "name": "Crear cuenta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tipoCuenta\": \"AHORRO\",\r\n  \"saldoInicial\": 1000.00,\r\n  \"clienteId\": 18,\r\n  \"estado\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/cuentas/crear",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "cuentas",
+            "crear"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Cuenta",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tipoCuenta\": \"CORRIENTE\",\r\n  \"saldoInicial\": 1000.00,\r\n  \"saldoActual\": 1000.00,\r\n  \"numeroCuenta\": 5464545,\r\n  \"estado\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/cuentas/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "cuentas",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Traer cuenta por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/cuentas/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "cuentas",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Traer todas las cuentas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/cuentas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "cuentas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Movimiento",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cuentaId\": 3,\r\n  \"tipoMovimiento\": \"CREDITO\",\r\n  \"valor\": 500.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/movimientos/crear",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "movimientos",
+            "crear"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reporte de cuentas y movimientos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/reportes?clienteId=18&fechaInicio=2026-01-25&fechaFin=2026-02-27",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "reportes"
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "18"
+            },
+            {
+              "key": "fechaInicio",
+              "value": "2026-01-25"
+            },
+            {
+              "key": "fechaFin",
+              "value": "2026-02-27"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
